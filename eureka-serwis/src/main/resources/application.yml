@@ -1,0 +1,17 @@
+# Eureka serwer konfiguracja
+server:
+  port: ${vcap.application.port:8761}   # HTTP port
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+
+# Panel Discovery Server korzysta z FreeMarker. Nie chcę szablonów Thymeleaf
+spring:
+  thymeleaf:
+    enabled: false     # Wyłącz Thymeleaf

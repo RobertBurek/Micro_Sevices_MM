@@ -1,0 +1,25 @@
+# Spring właściwości
+spring:
+  application:
+     name: spolka-serwis  # Usługa rejestruje się pod tą nazwą
+  freemarker:
+    enabled: false           # Zignoruj szablony FreeMarker pulpitu nawigacyjnego Eureka
+  thymeleaf:
+    cache: false             # Zezwalaj na ponowne ładowanie szablonów Thymeleaf w czasie wykonywania
+
+# Odwzoruj ścieżkę błędu na szablon błędu (dla Thymeleaf)
+error:
+  path=/error
+
+# Dostęp do serwera Discovery
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+# HTTP Server
+server:
+  port: 2222   # HTTP (Tomcat) port
+
+
+
