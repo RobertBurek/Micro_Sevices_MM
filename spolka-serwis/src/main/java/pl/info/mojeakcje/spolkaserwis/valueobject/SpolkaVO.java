@@ -21,7 +21,7 @@ public class SpolkaVO {
     private List<Transakcja> listaTrans = new ArrayList<>();
 
     /**
-     * Constructor
+     * Bezargumentowy konstruktor
      */
     public SpolkaVO() {
     }

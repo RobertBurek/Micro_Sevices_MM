@@ -108,13 +108,12 @@ public class SpolkaController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Spolka> add(@RequestBody SpolkaVO spolkaVO) {
         logger.info(String.format("SpolkaService metoda add() wywołana: %s dla %s", spolkaService.getClass().getName(), spolkaVO.getName()));
-        System.out.println(spolkaVO);
         Spolka spolka = new Spolka(null, null, null);
         BeanUtils.copyProperties(spolkaVO, spolka);
         try {
             spolkaService.add(spolka);
         } catch (Exception ex) {
-            logger.log(Level.WARNING, "Wyjątek w dodawaniu spólki w metodzie add {0}", ex);
+            logger.log(Level.WARNING, "Wyjątek w dodawaniu spólki w metodzie add()", ex);
             return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
         }
         return new ResponseEntity<>(HttpStatus.CREATED);
