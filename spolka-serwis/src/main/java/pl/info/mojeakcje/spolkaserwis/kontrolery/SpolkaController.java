@@ -41,7 +41,7 @@ public class SpolkaController {
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<Collection<Spolka>> getAll() {
-        logger.info(String.format("SpolkaService metoda getAll() wywołana: %s s", spolkaService.getClass().getName()));
+        logger.info(String.format("SpolkaService metoda getAll() wywołana przez %s", spolkaService.getClass().getName()));
         Collection<Spolka> spolki;
         try {
             spolki = spolkaService.getAll();
@@ -63,7 +63,7 @@ public class SpolkaController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<Collection<Spolka>> findByName(@RequestParam("name") String name) {
-        logger.info(String.format("SpolkaService metoda findByName() wywołana: %s for %s ", spolkaService.getClass().getName(), name));
+        logger.info(String.format("SpolkaService metoda findByName() wywołana przez %s dla %s ", spolkaService.getClass().getName(), name));
         name = name.trim().toLowerCase();
         Collection<Spolka> spolki;
         try {
@@ -86,7 +86,7 @@ public class SpolkaController {
      */
     @RequestMapping(value = "/{spolka_id}", method = RequestMethod.GET)
     public ResponseEntity<Entity> findById(@PathVariable("spolka_id") String id) {
-        logger.info(String.format("spółka-service findById() wywołana: %s dla %s ", spolkaService.getClass().getName(), id));
+        logger.info(String.format("spółka-service findById() wywołana przez %s dla %s ", spolkaService.getClass().getName(), id));
         id = id.trim();
         Entity spolka;
         try {
@@ -107,7 +107,7 @@ public class SpolkaController {
      */
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Spolka> add(@RequestBody SpolkaVO spolkaVO) {
-        logger.info(String.format("SpolkaService metoda add() wywołana: %s dla %s", spolkaService.getClass().getName(), spolkaVO.getName()));
+        logger.info(String.format("SpolkaService metoda add() wywołana przez %s dla %s", spolkaService.getClass().getName(), spolkaVO.getName()));
         Spolka spolka = new Spolka(null, null, null);
         BeanUtils.copyProperties(spolkaVO, spolka);
         try {
