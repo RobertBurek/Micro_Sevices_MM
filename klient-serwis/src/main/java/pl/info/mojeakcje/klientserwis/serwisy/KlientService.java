@@ -13,16 +13,16 @@ import java.util.Map;
 public interface KlientService {
 
     /**
-     * @param walletBuild
+     * @param klient
      * @throws Exception
      */
-    void add(Klient walletBuild) throws Exception;
+    void add(Klient klient) throws Exception;
 
     /**
-     * @param walletBuild
+     * @param klient
      * @throws Exception
      */
-    void update(Klient walletBuild) throws Exception;
+    void update(Klient klient) throws Exception;
 
     /**
      * @param id
